@@ -22,6 +22,4 @@ pivot_df.plot(kind="line", color=["blue", "red"])
 plt.xlabel("time")
 plt.ylabel("votes")
 
-
-plt.show()
-#plt.savefig("plot.png")
+plt.savefig("plot.png")
