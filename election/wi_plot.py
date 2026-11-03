@@ -1,6 +1,7 @@
 import pandas as pd
 
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 
 df = pd.read_csv("state_ENR_president.csv", dtype={'jurisdiction_name': "string"})
 
@@ -20,4 +21,11 @@ pivot_df.plot(kind="line", color=["blue", "red"])
 plt.xlabel("time")
 plt.ylabel("votes")
 
+plt.ticklabel_format(axis='y', style='plain')
+
+plt.gca().xaxis.set_major_formatter(mdates.DateFormatter("%m-%d %H:%M"))
+plt.gcf().set_figwidth(12)
+plt.gcf().set_figheight(8)
+
+#plt.show()
 plt.savefig("plot.png")
